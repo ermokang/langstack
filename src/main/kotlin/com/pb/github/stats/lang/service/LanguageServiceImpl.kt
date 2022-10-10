@@ -2,10 +2,10 @@ package com.pb.github.stats.lang.service
 
 import com.pb.github.stats.lang.model.Language
 import com.pb.github.stats.lang.repository.LanguageRepository
-import java.lang.invoke.MethodHandles
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
+import java.lang.invoke.MethodHandles
 
 @Component
 class LanguageServiceImpl(val repository: LanguageRepository) : LanguageService {

@@ -1,12 +1,11 @@
 package com.pb.github.stats.lang.repository
 
+import com.pb.github.stats.lang.common.SpringBootConfiguration
 import com.pb.github.stats.lang.model.Language
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class LanguageRepositoryTest(private val repository: LanguageRepository) {
+class LanguageRepositoryTest(private val repository: LanguageRepository) : SpringBootConfiguration() {
     @Test
     fun `Should return not empty list`() {
         assertThat(repository.findAll().toList()).isNotEmpty

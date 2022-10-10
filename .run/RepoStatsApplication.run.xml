@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RepoStatsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" />
+    <envs>
+      <env name="GITHUB_PAT" value="" />
+    </envs>
+    <module name="list-languages" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.pb.github.stats.lang.RepoStatsApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

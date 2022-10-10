@@ -22,12 +22,11 @@ class GitHubClientHttpRequestInterceptor(private val gitHubApiProperties: GitHub
         request: HttpRequest,
         body: ByteArray,
         execution: ClientHttpRequestExecution
-    ): ClientHttpResponse = let {
+    ): ClientHttpResponse =
         gitHubApiProperties.pat?.let { prop -> request.headers.set(HttpHeaders.AUTHORIZATION, "token $prop") }
-        val clientHttpResponse = execution.execute(request, body)
-        clientHttpResponse
-    }.also {
-        logger.info("Request Method: {}", request.method)
-        logger.info("Request URI: {}", request.uri)
-    }
+            .run { execution.execute(request, body) }
+            .also {
+                logger.info("Request Method: {}", request.method)
+                logger.info("Request URI: {}", request.uri)
+            }
 }
